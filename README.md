@@ -5,8 +5,7 @@
 
 This is minimum demo of headless chrome and selenium on container image on AWS Lambda
 
-This image goes with these versions. [These are automatically updated and tested everyday.](https://github.com/umihico/docker-selenium-lambda/actions)
-
+This image goes with these versions.
 - Python 3.11.5
 - chromium 114.0.5735.0
 - chromedriver 114.0.5735.90
@@ -24,7 +23,6 @@ sls invoke --function demo --path input.json
 ```
 
 ## Public image is available
-
 If you want your image simplier and updated automatically, rewrite the Dockerfile with the following commands:
 
 ```Dockerfile
