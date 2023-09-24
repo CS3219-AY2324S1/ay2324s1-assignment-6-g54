@@ -224,7 +224,7 @@
             "Type": "AWS::Lambda::Function",
             "Properties": {
               "Code": {
-                "ImageUri": "460565642369.dkr.ecr.ap-southeast-1.amazonaws.com/serverless-docker-selenium-lambda-prod@sha256:b62e26c23754c170ab7879e03f50f3554b0d910837cbaa13bff80c0d5aa4b9e2"
+                "ImageUri": "460565642369.dkr.ecr.ap-southeast-1.amazonaws.com/serverless-docker-selenium-lambda-prod@sha256:ab88479ca681c00bea3c4c72eed1d8e3b003de2c14f929598056be3b564d6d74"
               },
               "PackageType": "Image",
               "FunctionName": "docker-selenium-lambda-prod-demo",
@@ -241,24 +241,14 @@
               "DemoLogGroup"
             ]
           },
-          "DemoLambdaVersionzhgewgb3UZxNeqSwCJX4YvEBiWTLaQ4EPPUoImgWzJc": {
+          "DemoLambdaVersion69Q8wkRdF8gDGl9CajbVkxVSicglh0UkikRHxQjx4": {
             "Type": "AWS::Lambda::Version",
             "DeletionPolicy": "Retain",
             "Properties": {
               "FunctionName": {
                 "Ref": "DemoLambdaFunction"
               },
-              "CodeSha256": "b62e26c23754c170ab7879e03f50f3554b0d910837cbaa13bff80c0d5aa4b9e2"
-            }
-          },
-          "CWLSubFilterDemoLogGroupApSoutheast1": {
-            "Type": "AWS::Logs::SubscriptionFilter",
-            "Properties": {
-              "DestinationArn": "arn:aws:logs:ap-southeast-1:802587217904:destination:9b5c6701-de40-47cc-ba4e-548fb4b8ddc2#Wgsr1zT5LJb34nkjfw#docker-selenium-lambda#prod",
-              "FilterPattern": "?\"REPORT RequestId: \" ?\"SERVERLESS_ENTERPRISE\"",
-              "LogGroupName": {
-                "Ref": "DemoLogGroup"
-              }
+              "CodeSha256": "ab88479ca681c00bea3c4c72eed1d8e3b003de2c14f929598056be3b564d6d74"
             }
           }
         },
@@ -285,7 +275,7 @@
           "DemoLambdaFunctionQualifiedArn": {
             "Description": "Current Lambda function version",
             "Value": {
-              "Ref": "DemoLambdaVersionzhgewgb3UZxNeqSwCJX4YvEBiWTLaQ4EPPUoImgWzJc"
+              "Ref": "DemoLambdaVersion69Q8wkRdF8gDGl9CajbVkxVSicglh0UkikRHxQjx4"
             },
             "Export": {
               "Name": "sls-docker-selenium-lambda-prod-DemoLambdaFunctionQualifiedArn"
@@ -390,7 +380,7 @@
         "package": {},
         "memory": 2048,
         "vpc": {},
-        "versionLogicalId": "DemoLambdaVersionzhgewgb3UZxNeqSwCJX4YvEBiWTLaQ4EPPUoImgWzJc"
+        "versionLogicalId": "DemoLambdaVersion69Q8wkRdF8gDGl9CajbVkxVSicglh0UkikRHxQjx4"
       }
     },
     "configValidationMode": "warn",
@@ -415,7 +405,7 @@
     "appUid": "Wgsr1zT5LJb34nkjfw"
   },
   "package": {
-    "artifactDirectoryName": "serverless/docker-selenium-lambda/prod/1694766454417-2023-09-15T08:27:34.417Z",
+    "artifactDirectoryName": "serverless/docker-selenium-lambda/prod/1695574040884-2023-09-24T16:47:20.884Z",
     "artifact": ""
   }
 }

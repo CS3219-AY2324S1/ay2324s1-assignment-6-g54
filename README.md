@@ -18,7 +18,7 @@ $ npm install -g serverless # skip this line if you have already installed Serve
 $ export AWS_REGION=ap-southeast-1 # You can specify region or skip this line.
 $ sls # creates the sls project. you will be redirected to the browser to key in your AWS credentials
 $ sls deploy # deploys the image
-$ sls invoke --function demo --data '{"completed_upto": 5, "num_questions": 3}' 
+$ sls invoke --function demo --data '{"leetcode_id_start": 5, "num_questions": 3}' 
 sls invoke --function demo --path input.json
 ```
 
