@@ -109,16 +109,16 @@ def handler(event=None, context=None):
     links = get_problem_links(LEETCODE_ALGORITHMS_URL)
     question_data_list = []
 
-    completed_upto = -1
+    leetcode_id_start = 0
     num_questions = 5
     if (event != None and isinstance(event, dict)):
-        if 'completed_upto' in event:
-            completed_upto = int(event['completed_upto'])
+        if 'leetcode_id_start' in event:
+            leetcode_id_start = int(event['leetcode_id_start'])
         if 'num_questions' in event:
             num_questions = int(event['num_questions'])
 
     try:
-        for i in range(completed_upto + 1, min(len(links), completed_upto + 1 + num_questions)  ):
+        for i in range(leetcode_id_start, min(len(links), leetcode_id_start + num_questions)  ):
             question__title_slug, _, frontend_question_id, question__title, question__article__slug = links[i]
             url = ALGORITHMS_BASE_URL + question__title_slug
             questionInfo = get_question_content(url)
