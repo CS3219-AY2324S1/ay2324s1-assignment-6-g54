@@ -112,13 +112,22 @@ def handler(event=None, context=None):
     leetcode_id_start = 0
     num_questions = 5
     if (event != None and isinstance(event, dict)):
-        if 'leetcode_id_start' in event:
+        if ('leetcode_id_start' in event) and ('num_questions' in event):
             leetcode_id_start = int(event['leetcode_id_start'])
-        if 'num_questions' in event:
             num_questions = int(event['num_questions'])
+        else:
+            http_method = event['requestContext']['http']['method']
+            if http_method == 'POST':
+                request_body = json.loads(event['body'])
+                leetcode_id_start = int(request_body['leetcode_id_start'])
+                num_questions = int(request_body['num_questions'])
+            elif http_method == 'GET':
+                query_params = event['queryStringParameters']
+                leetcode_id_start = int(query_params['leetcode_id_start'])
+                num_questions = int(query_params['num_questions'])
 
     try:
-        for i in range(leetcode_id_start, min(len(links), leetcode_id_start + num_questions)  ):
+        for i in range(leetcode_id_start, min(len(links), leetcode_id_start + num_questions)):
             question__title_slug, _, frontend_question_id, question__title, question__article__slug = links[i]
             url = ALGORITHMS_BASE_URL + question__title_slug
             questionInfo = get_question_content(url)

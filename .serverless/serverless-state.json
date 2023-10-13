@@ -224,7 +224,7 @@
             "Type": "AWS::Lambda::Function",
             "Properties": {
               "Code": {
-                "ImageUri": "460565642369.dkr.ecr.ap-southeast-1.amazonaws.com/serverless-docker-selenium-lambda-prod@sha256:ab88479ca681c00bea3c4c72eed1d8e3b003de2c14f929598056be3b564d6d74"
+                "ImageUri": "460565642369.dkr.ecr.ap-southeast-1.amazonaws.com/serverless-docker-selenium-lambda-prod@sha256:0b10336706425967495cacf46224c5b68924f1fc6aad76895ec3fe46a5fde318"
               },
               "PackageType": "Image",
               "FunctionName": "docker-selenium-lambda-prod-demo",
@@ -241,14 +241,14 @@
               "DemoLogGroup"
             ]
           },
-          "DemoLambdaVersion69Q8wkRdF8gDGl9CajbVkxVSicglh0UkikRHxQjx4": {
+          "DemoLambdaVersionD0vd7vRH1lOFoiBwfcqooJCI8zYlA8sIIguEQ7g8EI": {
             "Type": "AWS::Lambda::Version",
             "DeletionPolicy": "Retain",
             "Properties": {
               "FunctionName": {
                 "Ref": "DemoLambdaFunction"
               },
-              "CodeSha256": "ab88479ca681c00bea3c4c72eed1d8e3b003de2c14f929598056be3b564d6d74"
+              "CodeSha256": "0b10336706425967495cacf46224c5b68924f1fc6aad76895ec3fe46a5fde318"
             }
           }
         },
@@ -275,7 +275,7 @@
           "DemoLambdaFunctionQualifiedArn": {
             "Description": "Current Lambda function version",
             "Value": {
-              "Ref": "DemoLambdaVersion69Q8wkRdF8gDGl9CajbVkxVSicglh0UkikRHxQjx4"
+              "Ref": "DemoLambdaVersionD0vd7vRH1lOFoiBwfcqooJCI8zYlA8sIIguEQ7g8EI"
             },
             "Export": {
               "Name": "sls-docker-selenium-lambda-prod-DemoLambdaFunctionQualifiedArn"
@@ -380,7 +380,7 @@
         "package": {},
         "memory": 2048,
         "vpc": {},
-        "versionLogicalId": "DemoLambdaVersion69Q8wkRdF8gDGl9CajbVkxVSicglh0UkikRHxQjx4"
+        "versionLogicalId": "DemoLambdaVersionD0vd7vRH1lOFoiBwfcqooJCI8zYlA8sIIguEQ7g8EI"
       }
     },
     "configValidationMode": "warn",
@@ -405,7 +405,7 @@
     "appUid": "Wgsr1zT5LJb34nkjfw"
   },
   "package": {
-    "artifactDirectoryName": "serverless/docker-selenium-lambda/prod/1695574040884-2023-09-24T16:47:20.884Z",
+    "artifactDirectoryName": "serverless/docker-selenium-lambda/prod/1697187225476-2023-10-13T08:53:45.476Z",
     "artifact": ""
   }
 }
