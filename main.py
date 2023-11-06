@@ -99,25 +99,31 @@ def setup():
     driver = webdriver.Chrome(options=options, service=service)
     return driver
 
-
 def handler(event=None, context=None):
-    driver = setup()
-
-    LEETCODE_ALGORITHMS_URL = "https://leetcode.com/api/problems/algorithms/"
-    ALGORITHMS_BASE_URL = "https://leetcode.com/problems/"
-
-    links = get_problem_links(LEETCODE_ALGORITHMS_URL)
-    question_data_list = []
-
-    leetcode_id_start = 0
-    num_questions = 5
-    if (event != None and isinstance(event, dict)):
-        if 'leetcode_id_start' in event:
-            leetcode_id_start = int(event['leetcode_id_start'])
-        if 'num_questions' in event:
-            num_questions = int(event['num_questions'])
-
     try:
+        driver = setup()
+
+        LEETCODE_ALGORITHMS_URL = "https://leetcode.com/api/problems/algorithms/"
+        ALGORITHMS_BASE_URL = "https://leetcode.com/problems/"
+
+        links = get_problem_links(LEETCODE_ALGORITHMS_URL)
+        question_data_list = []
+
+        leetcode_id_start = 0
+        num_questions = 5
+        if (event != None and isinstance(event, dict)):
+            if 'leetcode_id_start' in event:
+                leetcode_id_start = int(event['leetcode_id_start'])
+            if 'num_questions' in event:
+                num_questions = int(event['num_questions'])
+            if 'body' in event:
+                body = json.loads(event['body'])
+                if 'leetcode_id_start' in body:
+                    leetcode_id_start = int(body['leetcode_id_start'])
+                if 'num_questions' in body:
+                    num_questions = int(body['num_questions'])
+
+    
         for i in range(leetcode_id_start, min(len(links), leetcode_id_start + num_questions)  ):
             question__title_slug, _, frontend_question_id, question__title, question__article__slug = links[i]
             url = ALGORITHMS_BASE_URL + question__title_slug
@@ -128,14 +134,18 @@ def handler(event=None, context=None):
             time.sleep(1) # Sleep for 1 secs between each problem
     except Exception as error:
         return {
-            "response": 404,
-            "error": error
+            "statusCode": 500,
+            "body": error
         }
     
     driver.quit()
     # json.dumps(question_data_list)
-    return {
-        "response": 200,
-        "questions": question_data_list
-    }
 
+    return {
+        "statusCode": 200, 
+        "headers": {
+            'Access-Control-Allow-Origin': '*',
+            'Access-Control-Allow-Credentials': True,
+        },
+        "body": json.dumps({ "questions": question_data_list })
+     }
