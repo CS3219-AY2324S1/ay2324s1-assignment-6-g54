@@ -188,7 +188,7 @@
                     "Action": "sts:AssumeRole",
                     "Condition": {
                       "StringEquals": {
-                        "sts:ExternalId": "ServerlessEnterprise-9b5c6701-de40-47cc-ba4e-548fb4b8ddc2"
+                        "sts:ExternalId": "ServerlessEnterprise-4d26162e-dc54-4a9b-a907-c82785b99a98"
                       }
                     }
                   }
@@ -224,7 +224,7 @@
             "Type": "AWS::Lambda::Function",
             "Properties": {
               "Code": {
-                "ImageUri": "460565642369.dkr.ecr.ap-southeast-1.amazonaws.com/serverless-docker-selenium-lambda-prod@sha256:ab88479ca681c00bea3c4c72eed1d8e3b003de2c14f929598056be3b564d6d74"
+                "ImageUri": "574370464766.dkr.ecr.ap-southeast-1.amazonaws.com/serverless-docker-selenium-lambda-prod@sha256:10859b3c446db68451788704458aa3fcb054356b501442c1850c9141245223ba"
               },
               "PackageType": "Image",
               "FunctionName": "docker-selenium-lambda-prod-demo",
@@ -241,14 +241,14 @@
               "DemoLogGroup"
             ]
           },
-          "DemoLambdaVersion69Q8wkRdF8gDGl9CajbVkxVSicglh0UkikRHxQjx4": {
+          "DemoLambdaVersion2VG8W6pTWGmTEU21LLufxAEXkqX967QnXUCDpMqhbY": {
             "Type": "AWS::Lambda::Version",
             "DeletionPolicy": "Retain",
             "Properties": {
               "FunctionName": {
                 "Ref": "DemoLambdaFunction"
               },
-              "CodeSha256": "ab88479ca681c00bea3c4c72eed1d8e3b003de2c14f929598056be3b564d6d74"
+              "CodeSha256": "10859b3c446db68451788704458aa3fcb054356b501442c1850c9141245223ba"
             }
           }
         },
@@ -275,7 +275,7 @@
           "DemoLambdaFunctionQualifiedArn": {
             "Description": "Current Lambda function version",
             "Value": {
-              "Ref": "DemoLambdaVersion69Q8wkRdF8gDGl9CajbVkxVSicglh0UkikRHxQjx4"
+              "Ref": "DemoLambdaVersion2VG8W6pTWGmTEU21LLufxAEXkqX967QnXUCDpMqhbY"
             },
             "Export": {
               "Name": "sls-docker-selenium-lambda-prod-DemoLambdaFunctionQualifiedArn"
@@ -380,13 +380,13 @@
         "package": {},
         "memory": 2048,
         "vpc": {},
-        "versionLogicalId": "DemoLambdaVersion69Q8wkRdF8gDGl9CajbVkxVSicglh0UkikRHxQjx4"
+        "versionLogicalId": "DemoLambdaVersion2VG8W6pTWGmTEU21LLufxAEXkqX967QnXUCDpMqhbY"
       }
     },
     "configValidationMode": "warn",
     "serviceFilename": "serverless.yml",
     "initialServerlessConfig": {
-      "org": "julietteoh",
+      "org": "bryanlohxz",
       "app": "docker-selenium-lambda",
       "service": "docker-selenium-lambda",
       "provider": {
@@ -397,15 +397,15 @@
       }
     },
     "app": "docker-selenium-lambda",
-    "org": "julietteoh",
+    "org": "bryanlohxz",
     "layers": {},
     "isDashboardMonitoringPreconfigured": true,
     "isDashboardAppPreconfigured": true,
-    "orgUid": "9b5c6701-de40-47cc-ba4e-548fb4b8ddc2",
-    "appUid": "Wgsr1zT5LJb34nkjfw"
+    "orgUid": "4d26162e-dc54-4a9b-a907-c82785b99a98",
+    "appUid": "GZ35fQ3XXmb74VqfwC"
   },
   "package": {
-    "artifactDirectoryName": "serverless/docker-selenium-lambda/prod/1695574040884-2023-09-24T16:47:20.884Z",
+    "artifactDirectoryName": "serverless/docker-selenium-lambda/prod/1699302596735-2023-11-06T20:29:56.735Z",
     "artifact": ""
   }
 }
