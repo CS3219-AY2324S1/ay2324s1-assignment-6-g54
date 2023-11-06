@@ -231,6 +231,32 @@
         },
         "CodeSha256": "10859b3c446db68451788704458aa3fcb054356b501442c1850c9141245223ba"
       }
+    },
+    "DemoLambdaFunctionUrl": {
+      "Type": "AWS::Lambda::Url",
+      "Properties": {
+        "AuthType": "NONE",
+        "TargetFunctionArn": {
+          "Fn::GetAtt": [
+            "DemoLambdaFunction",
+            "Arn"
+          ]
+        }
+      }
+    },
+    "DemoLambdaPermissionFnUrl": {
+      "Type": "AWS::Lambda::Permission",
+      "Properties": {
+        "FunctionName": {
+          "Fn::GetAtt": [
+            "DemoLambdaFunction",
+            "Arn"
+          ]
+        },
+        "Action": "lambda:InvokeFunctionUrl",
+        "Principal": "*",
+        "FunctionUrlAuthType": "NONE"
+      }
     }
   },
   "Outputs": {
@@ -260,6 +286,18 @@
       },
       "Export": {
         "Name": "sls-docker-selenium-lambda-prod-DemoLambdaFunctionQualifiedArn"
+      }
+    },
+    "DemoLambdaFunctionUrl": {
+      "Description": "Lambda Function URL",
+      "Value": {
+        "Fn::GetAtt": [
+          "DemoLambdaFunctionUrl",
+          "FunctionUrl"
+        ]
+      },
+      "Export": {
+        "Name": "sls-docker-selenium-lambda-prod-DemoLambdaFunctionUrl"
       }
     }
   }

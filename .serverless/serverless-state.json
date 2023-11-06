@@ -250,6 +250,29 @@
               },
               "CodeSha256": "10859b3c446db68451788704458aa3fcb054356b501442c1850c9141245223ba"
             }
+          },
+          "DemoLambdaFunctionUrl": {
+            "Type": "AWS::Lambda::Url",
+            "Properties": {
+              "AuthType": "NONE",
+              "TargetFunctionArn": {
+                "Fn::GetAtt": [
+                  "DemoLambdaFunction",
+                  "Arn"
+                ]
+              }
+            }
+          },
+          "DemoLambdaPermissionFnUrl": {
+            "Type": "AWS::Lambda::Permission",
+            "Properties": {
+              "FunctionName": {
+                "$ref": "$[\"service\"][\"provider\"][\"compiledCloudFormationTemplate\"][\"Resources\"][\"DemoLambdaFunctionUrl\"][\"Properties\"][\"TargetFunctionArn\"]"
+              },
+              "Action": "lambda:InvokeFunctionUrl",
+              "Principal": "*",
+              "FunctionUrlAuthType": "NONE"
+            }
           }
         },
         "Outputs": {
@@ -279,6 +302,18 @@
             },
             "Export": {
               "Name": "sls-docker-selenium-lambda-prod-DemoLambdaFunctionQualifiedArn"
+            }
+          },
+          "DemoLambdaFunctionUrl": {
+            "Description": "Lambda Function URL",
+            "Value": {
+              "Fn::GetAtt": [
+                "DemoLambdaFunctionUrl",
+                "FunctionUrl"
+              ]
+            },
+            "Export": {
+              "Name": "sls-docker-selenium-lambda-prod-DemoLambdaFunctionUrl"
             }
           }
         }
@@ -375,6 +410,7 @@
         "image": {
           "name": "img"
         },
+        "url": true,
         "events": [],
         "name": "docker-selenium-lambda-prod-demo",
         "package": {},
@@ -405,7 +441,7 @@
     "appUid": "GZ35fQ3XXmb74VqfwC"
   },
   "package": {
-    "artifactDirectoryName": "serverless/docker-selenium-lambda/prod/1699302596735-2023-11-06T20:29:56.735Z",
+    "artifactDirectoryName": "serverless/docker-selenium-lambda/prod/1699302836566-2023-11-06T20:33:56.566Z",
     "artifact": ""
   }
 }

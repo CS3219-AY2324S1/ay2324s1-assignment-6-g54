@@ -19,3 +19,4 @@ functions:
     memorySize: 2048
     image:
       name: img
+    url: true
