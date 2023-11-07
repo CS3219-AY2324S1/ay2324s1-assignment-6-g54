@@ -1,0 +1,55 @@
+{
+    "response": 200,
+    "questions": [
+        {
+            "title": "Symmetric Tree",
+            "complexity": "easy",
+            "categories": [
+                "Tree",
+                "Depth-First Search",
+                "Breadth-First Search",
+                "Binary Tree"
+            ],
+            "link": "https://leetcode.com/problems/symmetric-tree",
+            "description": "Given the `root` of a binary tree, *check whether it is a mirror of itself* (i.e., symmetric around its center).\n\n**Example 1:**\n![](https://assets.leetcode.com/uploads/2021/02/19/symtree1.jpg)\n\n**Input:** root = [1,2,2,3,4,4,3]\n**Output:** true\n\n**Example 2:**\n![](https://assets.leetcode.com/uploads/2021/02/19/symtree2.jpg)\n\n**Input:** root = [1,2,2,null,3,null,3]\n**Output:** false\n\n**Constraints:**\n* The number of nodes in the tree is in the range `[1, 1000]`.\n* `-100 <= Node.val <= 100`\n\n**Follow up:** Could you solve it both recursively and iteratively?",
+            "frontend_question_id": 101
+        },
+        {
+            "title": "Binary Tree Level Order Traversal",
+            "complexity": "medium",
+            "categories": [
+                "Tree",
+                "Breadth-First Search",
+                "Binary Tree"
+            ],
+            "link": "https://leetcode.com/problems/binary-tree-level-order-traversal",
+            "description": "Given the `root` of a binary tree, return *the level order traversal of its nodes' values*. (i.e., from left to right, level by level).\n\n**Example 1:**\n![](https://assets.leetcode.com/uploads/2021/02/19/tree1.jpg)\n\n**Input:** root = [3,9,20,null,null,15,7]\n**Output:** [[3],[9,20],[15,7]]\n\n**Example 2:**\n**Input:** root = [1]\n**Output:** [[1]]\n\n**Example 3:**\n**Input:** root = []\n**Output:** []\n\n**Constraints:**\n* The number of nodes in the tree is in the range `[0, 2000]`.\n* `-1000 <= Node.val <= 1000`\n\n",
+            "frontend_question_id": 102
+        },
+        {
+            "title": "Binary Tree Zigzag Level Order Traversal",
+            "complexity": "medium",
+            "categories": [
+                "Tree",
+                "Breadth-First Search",
+                "Binary Tree"
+            ],
+            "link": "https://leetcode.com/problems/binary-tree-zigzag-level-order-traversal",
+            "description": "Given the `root` of a binary tree, return *the zigzag level order traversal of its nodes' values*. (i.e., from left to right, then right to left for the next level and alternate between).\n\n**Example 1:**\n![](https://assets.leetcode.com/uploads/2021/02/19/tree1.jpg)\n\n**Input:** root = [3,9,20,null,null,15,7]\n**Output:** [[3],[20,9],[15,7]]\n\n**Example 2:**\n**Input:** root = [1]\n**Output:** [[1]]\n\n**Example 3:**\n**Input:** root = []\n**Output:** []\n\n**Constraints:**\n* The number of nodes in the tree is in the range `[0, 2000]`.\n* `-100 <= Node.val <= 100`\n\n",
+            "frontend_question_id": 103
+        },
+        {
+            "title": "Maximum Depth of Binary Tree",
+            "complexity": "easy",
+            "categories": [
+                "Tree",
+                "Depth-First Search",
+                "Breadth-First Search",
+                "Binary Tree"
+            ],
+            "link": "https://leetcode.com/problems/maximum-depth-of-binary-tree",
+            "description": "Given the `root` of a binary tree, return *its maximum depth*.\n\nA binary tree's **maximum depth**is the number of nodes along the longest path from the root node down to the farthest leaf node.\n\n**Example 1:**\n![](https://assets.leetcode.com/uploads/2020/11/26/tmp-tree.jpg)\n\n**Input:** root = [3,9,20,null,null,15,7]\n**Output:** 3\n\n**Example 2:**\n**Input:** root = [1,null,2]\n**Output:** 2\n\n**Constraints:**\n* The number of nodes in the tree is in the range `[0, 104]`.\n* `-100 <= Node.val <= 100`\n\n",
+            "frontend_question_id": 104
+        }
+    ]
+}
